@@ -14,4 +14,16 @@ export const bot = new Bot({
     partials: ["MESSAGE", "CHANNEL", "REACTION"],
 });
 
+
+
+bot.on('ready', () => {
+    console.log(`${bot.user.tag} is now watching online!`)
+    bot.user.setActivity('Moderno', ({type: "WATCHING"}))
+})
+
+
+
+
+require('dotenv').config()
+
 bot.start();
